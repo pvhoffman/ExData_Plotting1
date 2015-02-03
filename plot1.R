@@ -14,6 +14,7 @@ read.power.consumption.data <- function() {
         names(t3) <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
         t3$Date <- as.Date(t3$Date, format="%d/%m/%Y")
         t3 <- data.frame(t3)
+        ## we only care about global_active_power in this plot
         t3[,3] <- as.numeric(t3[,3])
         t3
 }
@@ -26,4 +27,5 @@ hist(din[,3]
      , xlab="Global Active Power (kilowatts)"
      , col="red")
 dev.off()
+
 
