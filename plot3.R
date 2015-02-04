@@ -24,10 +24,6 @@ read.power.consumption.data <- function() {
 
 ds <- read.power.consumption.data()
 
-m1 <- min(c(min(ds$Sub_metering_1), min(ds$Sub_metering_2), min(ds$Sub_metering_3)))
-m2 <- max(c(max(ds$Sub_metering_1), max(ds$Sub_metering_2), max(ds$Sub_metering_3)))
-
-
 png(filename="plot3.png"
     , width=480
     , height=480
@@ -35,7 +31,7 @@ png(filename="plot3.png"
     , bg="white")
 
 plot(ds$Date_Time
-     , ds$Sub_metering_1#c(m1, m2)
+     , ds$Sub_metering_1
      , type="n"
      , main=""
      , xlab=""
